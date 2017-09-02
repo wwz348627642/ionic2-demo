@@ -1,0 +1,14 @@
+page-login {
+
+	ion-grid {
+		height: 100%;
+
+		ion-row {
+			height: 100%;
+
+			.input-token {
+				border: 1px #eee solid;
+			}
+		}
+	}
+}

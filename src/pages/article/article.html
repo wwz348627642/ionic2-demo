@@ -1,0 +1,19 @@
+<ion-header>
+	<ion-navbar>
+    <ion-title>{{ articleTitle }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+	<div *ngIf="articleContent">
+		<div [innerHTML]="articleContent.content"></div>
+		<ion-list>
+			<ion-item *ngFor="let item of articleContent.replies">
+				<ion-thumbnail item-left>
+		      <img [src]="item.author.avatar_url">
+		    </ion-thumbnail>
+		    <h2>{{ item.author.loginname }}</h2>
+		    <p [innerHTML]="item.content"></p>
+			</ion-item>
+		</ion-list>	
+	</div>
+</ion-content>

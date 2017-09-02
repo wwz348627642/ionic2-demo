@@ -1,0 +1,33 @@
+<ion-header>
+	<ion-navbar>
+	  <ion-title>关于</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+	<ion-list>
+		<ion-list-header>
+			<h2>屏幕亮度</h2>
+		</ion-list-header>
+		<ion-item>
+			<ion-range [(ngModel)]="lightValue" color="blue" (ionChange)="changeLight()">
+				<ion-icon range-left name="sunny-outline"></ion-icon>
+				<ion-icon range-right name="sunny" md="md-sunny"></ion-icon>
+			</ion-range>
+		</ion-item>
+		<!-- <ion-list-header>
+			<h2>剩余电量</h2>
+		</ion-list-header>
+		<ion-item>
+			<ion-icon item-left name="battery-charging"></ion-icon>
+			<div item-right>
+				
+			</div>
+		</ion-item> -->
+		<ion-item>
+			<h2>作者：wilson wang</h2>
+		</ion-item>
+		<ion-item>
+			<h2>github：<a href="https://github.com/wwz348627642">https://github.com/wwz348627642</a></h2>
+		</ion-item>
+	</ion-list>
+</ion-content>

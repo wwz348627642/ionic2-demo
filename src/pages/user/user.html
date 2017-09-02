@@ -1,0 +1,35 @@
+<ion-header>
+	<ion-navbar>
+    <ion-title>Cnode Logo</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+	<ion-list *ngIf="userInfo">
+		<ion-list-header>基本信息</ion-list-header>
+		<ion-item>
+			<ion-avatar item-left>
+				<img [src]="userInfo.avatar_url">
+			</ion-avatar>
+			<h2 class="clearfix">
+				<span>{{ userInfo.loginname }}</span>
+				<span>{{ userInfo.score || 0 }}积分</span>
+			</h2>
+			<p>{{ userInfo.create_at }}</p>
+		</ion-item>
+		<ion-list-header>最近主题</ion-list-header>
+		<ion-item *ngFor="let topic of userInfo.recent_topics" (click)="goToArticleItem(topic.id)">
+			<h2>{{ topic.title }}</h2>
+		</ion-item>
+		<ion-item *ngIf="!userInfo.recent_topics.length">
+			<p>暂无相关信息</p>
+		</ion-item>
+		<ion-list-header>最近回复</ion-list-header>
+		<ion-item *ngFor="let reply of userInfo.recent_replies" (click)="goToArticleItem(reply.id)">
+			<h2>{{ reply.title }}</h2>
+			<p>{{ reply.author.loginname }}</p>
+		</ion-item>
+		<ion-item *ngIf="!userInfo.recent_replies.length">
+			<p>暂无更多回复</p>
+		</ion-item>
+	</ion-list>
+</ion-content>

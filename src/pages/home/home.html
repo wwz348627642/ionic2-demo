@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cnode Logo</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="goToWrite()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngIf = "topicList">
+    <ion-item *ngFor = "let item of topicList">
+      <ion-thumbnail item-left>
+        <img [src]="item.author.avatar_url">
+      </ion-thumbnail>
+      <h2 class="text-overflow small" (click)="gotToarticleItem(item.id)">{{ item.title }}</h2>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" enable="true">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

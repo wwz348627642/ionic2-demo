@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>新建主题</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-input placeholder="标题" clearInput="true" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-10>
+        <ion-icon name="image" (click)="chooseImage()" *ngIf="!isWeb"></ion-icon>
+        <ion-icon name="image" *ngIf="isWeb" class="choose-image">
+          <form enctype="multipart/form-data">
+            <input type="file" 
+                   class="hidden-input"
+                   accept="image/*"
+                   (change)="imageChange($event)">
+          </form>
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <img [src]="write.image" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-textarea placeholder="内容"></ion-textarea>
+    </ion-row>
+  </ion-grid>
+</ion-content>

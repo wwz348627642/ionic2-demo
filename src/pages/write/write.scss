@@ -1,0 +1,14 @@
+page-write {
+	.choose-image {
+		position: relative;
+
+		.hidden-input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 15px;
+			height: 15px;
+			opacity: 0;
+		}
+	} 
+}

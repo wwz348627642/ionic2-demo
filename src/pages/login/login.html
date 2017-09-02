@@ -1,0 +1,19 @@
+<ion-header>
+	<ion-navbar>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+	<ion-grid>
+		<ion-row center wrap>
+			<div padding-left padding-right>
+				<img src="../../assets/img/logo.png">
+			</div>
+			<ion-col width-80 offset-10 class="input-token">
+				<ion-input type="text" placeholder="请输入token" text-center [(ngModel)]="token"></ion-input>
+			</ion-col>
+			<ion-col width-80 offset-10>
+				<button ion-button block (click)="userLogin()">确定</button>		
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>
